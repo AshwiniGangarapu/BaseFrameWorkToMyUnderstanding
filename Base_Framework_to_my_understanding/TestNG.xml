@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Suite" parallel="none">
+
+	<listeners>
+		<listener class-name="com.listeners.ListenerTest"></listener>
+		<listener class-name="com.listeners.AnnotationTransformer"></listener>
+	</listeners>
+	<test name="Test" parallel = "classes" thread-count = "2" >
+	<!--  parallel = "classes" thread-count = "2" -->
+		<parameter name="browser" value="chrome" />
+		<classes>
+		 <class name="com.tests.Login" /> 	
+		  	<class name="com.tests.Login_DataDriven" />  
+		</classes>
+	</test>
+</suite>
